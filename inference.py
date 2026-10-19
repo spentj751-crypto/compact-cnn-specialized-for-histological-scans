@@ -15,7 +15,7 @@ import sys
 import time
 from pathlib import Path
 
-from verify_package import ROOT, sha256, verify
+from verify_package import ROOT, sha256, verify, verify_weights
 
 
 def select_device(torch, requested):
@@ -143,16 +143,19 @@ def main():
             raise ValueError("Input and output must differ")
         manifest = json.loads((ROOT / "MANIFEST.json").read_text(encoding="utf-8"))
         protected = {(ROOT / i["path"]).resolve() for i in manifest["files"]}
+        required = json.loads((ROOT / "WEIGHTS_REQUIRED.json").read_text(encoding="utf-8"))
+        protected.update((ROOT / i["path"]).resolve() for i in required["files"])
         protected.add((ROOT / "MANIFEST.json").resolve())
         if args.output.resolve() in protected:
             raise ValueError("Output would overwrite a release file")
+        verify()
+        verify_weights()
         image = strict_image(args.image)
         import numpy as np
         import torch
         from qc_pixels import analyze_rgb
         device = select_device(torch, args.device)
         print(f"Actual device: {device} / {torch.cuda.get_device_name(device)}; encoder BF16 autocast, head FP32", flush=True)
-        verify()
         config = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
         seed_all(torch, np, config["seed"])
         started = time.perf_counter()

@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-20",
+  "distribution": "source_only_no_model_weights",
+  "public_package_full_inference_without_private_weights": "not_possible_by_design",
+  "checks": {
+    "manifest_without_ml_dependencies": "passed",
+    "cli_help_without_ml_dependencies": "passed",
+    "missing_weights_failure_before_ml_imports": "passed",
+    "synthetic_example_reproduced_byte_for_byte": "passed",
+    "git_stages_only_public_manifest_files": "passed",
+    "ignored_private_file_probes": 14,
+    "original_numerical_and_image_functions_unchanged": [
+      "select_device",
+      "strict_image",
+      "preprocess",
+      "seed_all",
+      "load_models",
+      "forward",
+      "save_result"
+    ],
+    "separately_placed_weights_pass_exact_hashes": "passed"
+  },
+  "private_integration_check": {
+    "private_temporary_copy_only": true,
+    "model_weights_not_added_to_public_directory": true,
+    "full_cuda_inference": "passed",
+    "empty_caches": true,
+    "blocked_python_network_attempts": [],
+    "blocked_original_project_access_attempts": [],
+    "environment": "Previously verified clean Python 3.11.9 venv; requirements.lock.txt unchanged; no reinstall in this source-only packaging step",
+    "outputs_kept_outside_public_release": true
+  },
+  "comparison_with_full_local_package": {
+    "image_identity_equal": true,
+    "logits_equal": true,
+    "softmax_scores_equal": true,
+    "class_equal": true,
+    "pixel_qc_equal": true,
+    "model_output_values_included_in_public_release": false
+  },
+  "full_local_release": {
+    "folder_all_files_unchanged": true,
+    "zip_sha256_unchanged": true
+  },
+  "not_tested": [
+    "A different physical computer/GPU",
+    "CPU full inference (unsupported by original CUDA BF16 contract)",
+    "A new dependency installation during this packaging step",
+    "Model diagnostic quality"
+  ],
+  "note": "Only source/package checks and boolean validation outcomes are included, not predictions, embeddings, model parameters or training data."
+}

@@ -1,19 +1,20 @@
 {
   "schema_version": 1,
   "hash_algorithm": "SHA-256",
-  "created_date": "2026-10-19",
-  "file_count": 23,
-  "total_bytes_excluding_manifest": 1214753586,
+  "distribution": "public_source_without_weights",
+  "created_date": "2026-10-20",
+  "file_count": 18,
+  "total_bytes_excluding_manifest": 204335,
   "files": [
     {
       "path": ".gitattributes",
-      "size_bytes": 80,
-      "sha256": "ee9dcc73e03bcf53704f7134e323e9d45792472ce6670e8a4a3e673afacf4423"
+      "size_bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
     },
     {
       "path": ".gitignore",
-      "size_bytes": 168,
-      "sha256": "f31551a8078eed1a77bf80533c866c4604174d0f678684e58fc7acbbca595151"
+      "size_bytes": 378,
+      "sha256": "b57b8705acdbb2363209d0a7425ce80bb034e76f7ac69e5de05430e8d61496b8"
     },
     {
       "path": ".python-version",
@@ -32,18 +33,13 @@
     },
     {
       "path": "inference.py",
-      "size_bytes": 9338,
-      "sha256": "b75d05d36c78f5b58182422adb60cc4e8252d9ddbffc768e7745e8516e8daa86"
+      "size_bytes": 9553,
+      "sha256": "3ba0bdf50c21dbbee1aaa6e856f89e23006d1701c86400c8e443dbeb7b308cf5"
     },
     {
       "path": "licenses/PHIKON_V2_LICENSE.pdf",
       "size_bytes": 157974,
       "sha256": "8a9b8325b19305ed8438d04ae76de08e8d072ad03c32982764c73ab7c1237739"
-    },
-    {
-      "path": "licenses/PHIKON_V2_MODEL_CARD.md",
-      "size_bytes": 18082,
-      "sha256": "4e786250e2dc75646d6b17fc6452b075dbdf2f2909246f36ff5fd451bb1b8849"
     },
     {
       "path": "make_example.py",
@@ -57,13 +53,13 @@
     },
     {
       "path": "NOTICE.md",
-      "size_bytes": 2843,
-      "sha256": "4364ba9a1257e9c3ad1f389f1f68628f46ab0ab38db36c9a5be5a1e8029d2c75"
+      "size_bytes": 3167,
+      "sha256": "4329c4fc18d412d61e05f6865b643caddc1eb05467769b2911988f86442eebd7"
     },
     {
-      "path": "PROVENANCE.json",
-      "size_bytes": 3351,
-      "sha256": "488ba6d3c45b5cae35e04784292162081a47f778e58422ae26e7c7cdab407d61"
+      "path": "PUBLIC_VALIDATION.json",
+      "size_bytes": 2041,
+      "sha256": "7684bbc835a0ba5b488fd63d216cf3ef00746543ec8faf2a01cf2184451e0225"
     },
     {
       "path": "qc_config.json",
@@ -76,49 +72,29 @@
       "sha256": "f52faa666587bd2858cc1aede4ebc8efc932427b1fff6593eafc681524bdd692"
     },
     {
+      "path": "README.md",
+      "size_bytes": 1273,
+      "sha256": "6345d322a2576c4f86c44b8330150aeacda2e1267d7734e5e18af78a6f28413f"
+    },
+    {
       "path": "requirements.lock.txt",
       "size_bytes": 751,
       "sha256": "73a638444e208edbcf5591658df8de7b7219d7eed796ba416b2336766444e7a7"
     },
     {
       "path": "RUN.md",
-      "size_bytes": 16135,
-      "sha256": "e23ae0956cddc9581f1ec25a838da5afdddc49cd0a62df8afb82462950f2ccc4"
-    },
-    {
-      "path": "validation/synthetic_result.json",
-      "size_bytes": 2071,
-      "sha256": "135885bae64c22a11e0b6f318826b50b2d472f6d9cf974409032a2cf17eb5905"
-    },
-    {
-      "path": "validation/VALIDATION.json",
-      "size_bytes": 9717,
-      "sha256": "0c3f168f15efc3edd823931055f9503701ae97035f855c43b9813e42555530a1"
+      "size_bytes": 11706,
+      "sha256": "0262f47b8aa87e538d1dcf1e9fe096f6d97c4c9284e92c5fb85008ad109db5f7"
     },
     {
       "path": "verify_package.py",
-      "size_bytes": 1179,
-      "sha256": "12efaba8a967d4353d1de095f7c70e39ae443b2b1982a63bfcbb3c84b4c0cdd7"
+      "size_bytes": 2276,
+      "sha256": "1747b35ab2f85ec6ba38ffe688af5a8d3d3ee837ff9828b8a01e01ff76c157f0"
     },
     {
-      "path": "weights/head.safetensors",
-      "size_bytes": 1060304,
-      "sha256": "54519a196a5bfa38b644953a9fbabbc13f4a81bc279f1ca180a4439dbb784262"
-    },
-    {
-      "path": "weights/phikon-v2/config.json",
-      "size_bytes": 1214,
-      "sha256": "31b069a93e6b68741aba703e9b44b01c2e0d00a251023fde2af8e6fd80bc77fc"
-    },
-    {
-      "path": "weights/phikon-v2/model.safetensors",
-      "size_bytes": 1213455560,
-      "sha256": "261ae680fa699b3b951597fd57aa19c02ef735805acb104b93af69b36d928569"
-    },
-    {
-      "path": "weights/phikon-v2/preprocessor_config.json",
-      "size_bytes": 750,
-      "sha256": "dde0ea8d89652cd0c34dd25b5bf68ea9d948defc06edbeefed21aa1c103f2b51"
+      "path": "WEIGHTS_REQUIRED.json",
+      "size_bytes": 1139,
+      "sha256": "65694debf84ca8e334cdd22cf4cd16a86a54951cf034e49547683f0da669de43"
     }
   ]
 }

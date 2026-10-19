@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "included_in_public_package": false,
+  "repository": "owkin/phikon-v2",
+  "revision": "2ae989a9c40cffaa27f0a6cb29cc94d1d6f9a5fd",
+  "official_source": "https://huggingface.co/owkin/phikon-v2/tree/2ae989a9c40cffaa27f0a6cb29cc94d1d6f9a5fd",
+  "head_public_download": null,
+  "model_id": "prostate-classifier",
+  "training_run": "run_20260928_135445",
+  "epoch": 4,
+  "files": [
+    {
+      "path": "weights/head.safetensors",
+      "size_bytes": 1060304,
+      "sha256": "54519a196a5bfa38b644953a9fbabbc13f4a81bc279f1ca180a4439dbb784262"
+    },
+    {
+      "path": "weights/phikon-v2/config.json",
+      "size_bytes": 1214,
+      "sha256": "31b069a93e6b68741aba703e9b44b01c2e0d00a251023fde2af8e6fd80bc77fc"
+    },
+    {
+      "path": "weights/phikon-v2/model.safetensors",
+      "size_bytes": 1213455560,
+      "sha256": "261ae680fa699b3b951597fd57aa19c02ef735805acb104b93af69b36d928569"
+    },
+    {
+      "path": "weights/phikon-v2/preprocessor_config.json",
+      "size_bytes": 750,
+      "sha256": "dde0ea8d89652cd0c34dd25b5bf68ea9d948defc06edbeefed21aa1c103f2b51"
+    }
+  ]
+}
