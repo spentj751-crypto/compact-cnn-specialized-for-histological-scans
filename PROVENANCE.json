@@ -1,0 +1,64 @@
+{
+  "selected_by": "Current prostate-classifier registration in configs/model_registry.yaml; README current prostate route",
+  "training_run": "run_20260928_135445",
+  "epoch": 4,
+  "source_checkpoint": "models/prostata_phikon224_v1/run_20260928_135445/best.pt",
+  "source_checkpoint_sha256": "0bfdd76ad27c3ab699d3fad70936f42b881894c3bbe574025028f9b5a3c66671",
+  "source_checkpoint_bytes": 3210322,
+  "head_export": {
+    "file": "weights/head.safetensors",
+    "sha256": "54519a196a5bfa38b644953a9fbabbc13f4a81bc279f1ca180a4439dbb784262",
+    "bytes": 1060304,
+    "all_6_tensors_bitwise_equal": true,
+    "all_dtypes_preserved": true,
+    "removed": "optimizer, RNG, training history, dataset paths and training-only metadata"
+  },
+  "encoder": {
+    "repository": "owkin/phikon-v2",
+    "revision": "2ae989a9c40cffaa27f0a6cb29cc94d1d6f9a5fd",
+    "source_url": "https://huggingface.co/owkin/phikon-v2/tree/2ae989a9c40cffaa27f0a6cb29cc94d1d6f9a5fd",
+    "files": {
+      "config.json": {
+        "sha256": "31b069a93e6b68741aba703e9b44b01c2e0d00a251023fde2af8e6fd80bc77fc",
+        "bytes": 1214
+      },
+      "LICENSE.pdf": {
+        "sha256": "8a9b8325b19305ed8438d04ae76de08e8d072ad03c32982764c73ab7c1237739",
+        "bytes": 157974
+      },
+      "model.safetensors": {
+        "sha256": "261ae680fa699b3b951597fd57aa19c02ef735805acb104b93af69b36d928569",
+        "bytes": 1213455560
+      },
+      "preprocessor_config.json": {
+        "sha256": "dde0ea8d89652cd0c34dd25b5bf68ea9d948defc06edbeefed21aa1c103f2b51",
+        "bytes": 750
+      },
+      "README.md": {
+        "sha256": "4e786250e2dc75646d6b17fc6452b075dbdf2f2909246f36ff5fd451bb1b8849",
+        "bytes": 18082
+      }
+    },
+    "local_weights_bytes": 1213455560
+  },
+  "sources": {
+    "scripts/train_tissue_phikon.py": "6f692524cdc89b8ae6379536e01596ad1b9194917ef71dfedf0388ec6fe3fc36",
+    "models/prostata_phikon224_v1/run_20260928_135445/inference.py": "d0eef7b9dee0d7380c8bcde6b0cca3918b610cbc2a85e0e4dc9be348ac7eb134",
+    "data/_preparation/run_20260928_001120/model_input.py": "e2fb05075901e35c84b16dd908155bfbe7031c55f4b7605a5712a9e72f7caad0",
+    "data/_preparation/run_20260928_001120/qc_pixels.py": "f52faa666587bd2858cc1aede4ebc8efc932427b1fff6593eafc681524bdd692",
+    "data/_preparation/run_20260928_001120/qc_config.json": "1e450b12e9f28bf353d73e6f8f9b54efadf03ca9266597882a5eaaa7ffccbb1d",
+    "configs/model_registry.yaml": "d82bea48e2dd894fa469c9505f9b597891b22f992d60471d862b065d788b64b4"
+  },
+  "modifications": [
+    "Portable local paths; inference-only MLP extraction; tensor-only head serialization without numeric changes",
+    "Removed training data integrity prerequisites and dataset lookups; new inputs have no saved QC/manual records",
+    "Kept exact pixel QC implementation/configuration and exact encoder/MLP preprocessing and precision",
+    "One-image CLI exports JSON or CSV; explicit CUDA device selection and errors"
+  ],
+  "not_included": [
+    "UI/API/database/worker/LLM/Qwen",
+    "WSI extraction and optional ROI-MIL aggregation",
+    "Legacy models, datasets, training logs, patient metadata, feature caches"
+  ],
+  "upstream_config_note": "Unmodified upstream config.json has an informational _name_or_path from Owkin; the runtime loads only this local directory."
+}

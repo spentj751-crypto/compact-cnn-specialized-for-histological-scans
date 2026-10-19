@@ -1,0 +1,19 @@
+{
+  "algorithm_version": "rgb-stained-tissue-v1",
+  "mask_formula": "HSV_S >= saturation_min AND mean(-ln((RGB+1)/256)) >= od_min",
+  "saturation_min": 0.05,
+  "od_min": 0.05,
+  "min_tissue_fraction": 0.2,
+  "near_uniform_max_channel_std": 1.0,
+  "empty_white_all_channels_min": 250,
+  "artifact_flag_min_tissue_fraction": 0.2,
+  "blur_laplacian_variance_below": 30.0,
+  "weak_stain_mean_tissue_od_below": 0.12,
+  "weak_stain_mean_tissue_saturation_below": 0.12,
+  "dark_gray_below": 80.0,
+  "dark_od_min": 0.9,
+  "dark_fraction_flag_above": 0.15,
+  "artifact_flags_are_rejections": false,
+  "absence_of_flags_is_artifact_clearance": false,
+  "mask_morphology": "none"
+}

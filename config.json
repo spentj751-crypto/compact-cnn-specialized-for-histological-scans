@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "model_id": "prostate-classifier",
+  "model_version": "prostata-phikon224-v1-run20260928_135445-epoch4",
+  "classes": [
+    "adenoma_hyperplasia",
+    "tumor"
+  ],
+  "seed": 20260927,
+  "input": {
+    "format": "PNG",
+    "mode": "RGB",
+    "dtype": "uint8",
+    "size": [
+      224,
+      224
+    ],
+    "resize": false,
+    "crop": false,
+    "augmentations": false,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "native_mpp_approx": 0.5119
+  },
+  "encoder": {
+    "directory": "weights/phikon-v2",
+    "repository": "owkin/phikon-v2",
+    "revision": "2ae989a9c40cffaa27f0a6cb29cc94d1d6f9a5fd",
+    "feature": "last_hidden_state[:,0,:]",
+    "dimension": 1024,
+    "parameter_dtype": "float32",
+    "autocast": "bfloat16",
+    "attention": "sdpa"
+  },
+  "head": {
+    "file": "weights/head.safetensors",
+    "parameter_dtype": "float32",
+    "architecture": "LayerNorm(1024), Dropout(0.3), Linear(1024,256), GELU, Dropout(0.3), Linear(256,2)"
+  },
+  "output": {
+    "processing": "float32_softmax",
+    "tumor_rule": "score_tumor > 0.5",
+    "threshold": 0.5,
+    "calibrator": null,
+    "scope": "patch"
+  },
+  "device": "cuda:0",
+  "batch_size": 1,
+  "determinism": {
+    "algorithms": true,
+    "tf32": false,
+    "cublas_workspace": ":4096:8",
+    "cpu_threads": 8
+  },
+  "qc_config": "qc_config.json"
+}
